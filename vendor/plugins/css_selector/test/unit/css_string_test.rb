@@ -1,4 +1,20 @@
+=begin
 require 'test_helper'
+p 'after cal 
+require 'pathname'
+
+plugin=Pathname(__FILE__).dirname.join('../../').cleanpath.realpath
+# p plugin.to_s
+
+#lib/css_selector2.rb 
+#test/test_helper.rb 
+#lib/css_string.rb 
+
+%w[ init.rb ].each do |e|
+  s = plugin.join(e).realpath
+# p s.to_s
+  require s
+end
 
 class CssStringTest < ActiveSupport::TestCase
 
@@ -9,6 +25,7 @@ class CssStringTest < ActiveSupport::TestCase
     padded.concat(bare).zip(methods).each{|s,m| two_ways s, m.to_sym}
   end
 
+#=begin
   test "+" do
     compare '', big.map{|e| CssString.new('v').+(*e) } # Keep without sugar.
     compare '', big.map{|e| CssString.new('v') +  e  }
@@ -41,6 +58,7 @@ class CssStringTest < ActiveSupport::TestCase
     strings = %w@  v[a]  v[a=b]  v[a=b][c]  v[a=b][c=d]  @
     strings.zip(arrays).each{|s,a| two_ways_attribute s, a}
   end
+#=end
 
 #-------------
   private
@@ -76,3 +94,4 @@ class CssStringTest < ActiveSupport::TestCase
   end
 
 end
+=end
