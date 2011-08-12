@@ -1,35 +1,29 @@
 require 'test_helper'
 
-# class CssStringNamespaceTest < ActiveSupport::TestCase
-class CssStringNamespaceTest < Test::Unit::TestCase
+class CssStringNamespaceTest < ActiveSupport::TestCase
   include CssStringNamespace
 
-  def test_after_app_includes_CssStringNamespace
-#  test "after_app_includes_CssStringNamespace" do
+  test 'after app includes CssStringNamespace' do
     assert defined?(CssString), 'missing CssString'
   end
 
-##  test "common" do
-  def test_common
+  test 'common' do
     padded = [ ?> , ?+       ]. map{ |e| " #{e.chr} "}
     bare   = [ ?. , ?# , ?\s ]. map{ |e|     e.chr   }
     methods = %w[ child  adjacent    css_class  css_id  descend ]
     padded.concat(bare).zip(methods).each{|s,m| two_ways s, m.to_sym}
   end
 
-##  test "+" do
-  def test_plus
+  test '+' do
     compare '', big.map{|e| CssString.new('v').+(*e) } # Keep without sugar.
     compare '', big.map{|e| CssString.new('v') +  e  }
   end
 
-##  test "ends" do
-  def test_ends
+  test 'ends' do
     %w[ first last ].each{|e| two_ways ' > ', e.to_sym, ":#{e}-child"}
   end
 
-##  test "not" do
-  def test_not
+  test 'not' do
 # An empty array shouldn't alter it.
     assert_equal 'v', (CssString.new('v').not [])
 # Increasing strings...
@@ -45,8 +39,7 @@ class CssStringNamespaceTest < Test::Unit::TestCase
     end
   end
 
-##  test "attribute" do
-  def test_attribute
+  test 'attribute' do
     assert_equal 'v', (CssString.new('v').attribute)
     a = %w[ a b c d ]
     arrays = (1..4).map{|n| a.take n}

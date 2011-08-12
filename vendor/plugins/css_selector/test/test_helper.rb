@@ -14,4 +14,3 @@ require 'rails/test_help'
 ## plugin_root = File.expand_path '../..', __FILE__
 ## has_lib = $LOAD_PATH.include? File.expand_path 'lib', plugin_root
 ## print 'has_lib='; p has_lib
-## require 'active_support'
