@@ -1,8 +1,8 @@
 require File.dirname(__FILE__) + '/test_helper'
 
-# class CssSelectorTest < ActiveSupport::TestCase
+# class CssStringTest < ActiveSupport::TestCase
 
-class CssSelectorTest < Test::Unit::TestCase
+class CssStringTest < Test::Unit::TestCase
 
   include CssStringNamespace
 
