@@ -1,10 +1,11 @@
 require 'test_helper'
 
-## class CssStringTest < ActiveSupport::TestCase
-class CssStringTest < Test::Unit::TestCase
+# class CssStringNamespaceTest < ActiveSupport::TestCase
+class CssStringNamespaceTest < Test::Unit::TestCase
   include CssStringNamespace
 
   def test_after_app_includes_CssStringNamespace
+#  test "after_app_includes_CssStringNamespace" do
     assert defined?(CssString), 'missing CssString'
   end
 
