@@ -4,9 +4,10 @@ require File.dirname(__FILE__) + '/test_helper'
 
 class CssSelectorTest < Test::Unit::TestCase
 
-#  test "the truth" do
-  def test_my_class_has_loaded_correctly
-    assert true
+  include CssStringNamespace
+
+  def test_css_string_defined_if_included
+    assert defined? CssString
   end
 
 end

@@ -1,6 +1,9 @@
 #@+leo-ver=5-thin
 #@+node:georgesawyer.20110806135445.1333: * @file css_string.rb
 # CSS Selector String
+
+module CssStringNamespace
+
 class CssString < String
 
   def +    *a; return self if guard *a; CssString.new [self, a].to_s end
@@ -38,6 +41,13 @@ class CssString < String
     return true if a.blank?
     a = a.flatten
     a.blank? || ['']==a
+  end
+
+end
+
+  %w[ A BODY DIV FORM HEAD HTML IMG INPUT LABEL SCRIPT STYLE TABLE TITLE
+      ].each do |e|
+    self.const_set e.upcase.to_sym, (CssString.new e.downcase)
   end
 
 end
