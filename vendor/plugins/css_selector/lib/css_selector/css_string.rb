@@ -1,7 +1,7 @@
 #@+leo-ver=5-thin
 #@+node:georgesawyer.20110806135445.1333: * @file css_string.rb
 # CSS Selector String
-class CssSelector::CssString < String
+class CssString < String
 
   def +    *a; return self if guard *a; CssString.new [self, a].to_s end
   def adjacent  *a; CssString.new a.flatten.unshift(self).join ' + ' end

@@ -1,8 +1,9 @@
-=begin
 require 'test_helper'
-p 'after cal 
-require 'pathname'
 
+=begin
+p 'after cal require 'pathname'
+#=end
+#=begin
 plugin=Pathname(__FILE__).dirname.join('../../').cleanpath.realpath
 # p plugin.to_s
 
