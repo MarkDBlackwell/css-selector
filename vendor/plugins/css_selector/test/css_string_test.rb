@@ -1,9 +1,7 @@
 require 'test_helper'
 
 ## class CssStringTest < ActiveSupport::TestCase
-
 class CssStringTest < Test::Unit::TestCase
-
   include CssStringNamespace
 
   def test_after_app_includes_CssStringNamespace
