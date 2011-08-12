@@ -1,5 +1,6 @@
 module CssSelector
   module PublicInstanceMethods
+    include CssStringNamespace
     public
 
     def assert_descend a, b
