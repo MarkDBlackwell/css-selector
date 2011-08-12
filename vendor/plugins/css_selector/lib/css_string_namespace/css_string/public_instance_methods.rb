@@ -1,6 +1,7 @@
 module CssStringNamespace
   class CssString < String
-    module InstanceMethods
+    module PublicInstanceMethods
+      public
 
       def +    *a; return self if guard *a; CssString.new [self, a].to_s end
       def adjacent  *a; CssString.new a.flatten.unshift(self).join ' + ' end
@@ -28,15 +29,6 @@ module CssStringNamespace
           r << ']'
         end
         CssString.new r
-      end
-
-#-------------
-      private
-
-      def guard *a
-        return true if a.blank?
-        a = a.flatten
-        a.blank? || ['']==a
       end
 
     end
