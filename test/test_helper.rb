@@ -1,13 +1,25 @@
-ENV["RAILS_ENV"] = "test"
-require File.expand_path('../../config/environment', __FILE__)
+# Followed the version of http://guides.rubyonrails.org/plugins.html
+# as of April 4, 2010 (says its changelog).
+
+# Following:
+# http://weblog.rubyonrails.org/2009/9/1/gem-packaging-best-practices
+
+ENV['RAILS_ENV'] = 'test'
+#=begin
+backsteps = 5
+# backsteps = 2
+s = (['..']*backsteps).join '/'
+## print "ENV['RAILS_ROOT']="; p ENV['RAILS_ROOT']
+ENV['RAILS_ROOT'] ||= File.expand_path s, __FILE__
+## print "ENV['RAILS_ROOT']="; p ENV['RAILS_ROOT']
+#exit
+#=end
+require File.expand_path 'config/environment', ENV['RAILS_ROOT']
 require 'rails/test_help'
 
-class ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+## plugin_root = File.expand_path '../..', __FILE__
+## has_lib = $LOAD_PATH.include? File.expand_path 'lib', plugin_root
+## print 'has_lib='; p has_lib
 
-  # Add more helper methods to be used by all tests here...
-end
+# Already in Gemfile:
+# require 'rubygems' # For mocha: see test/css_selector_test.rb.

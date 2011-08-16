@@ -1,8 +1,3 @@
-.bundle
 copy*
 Copy*
-db/*.sqlite3
-log/*.log
-out/*
-tmp/
 *~

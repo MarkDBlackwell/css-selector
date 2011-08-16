@@ -1,7 +1,15 @@
-See the (as yet uncustomized, so don't look) [plugin README](vendor/plugins/css_selector/README).
+CssSelector
+===========
 
-Currently, this is a combination of an incomplete plugin and its [visible](http://css-selector.heroku.com/) 
-testbed.
+Introduction goes here.
+
+
+Example
+=======
+
+Example goes here.
+
+This plugin is for use in testing (only).
 
 For background information, see presentation, [Rails testing with CssString (or 'Css 
 Selectors')](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm) and/or blog post, [CSS 
