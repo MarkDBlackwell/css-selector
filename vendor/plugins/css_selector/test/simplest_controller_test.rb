@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class SimplestControllerTest < ActionController::TestCase
+class ViewTest < ActionController::TestCase
 
   include CssStringNamespace
 
@@ -31,7 +31,8 @@ class SimplestControllerTest < ActionController::TestCase
     @dss=@ds.descend 'script'
     @dsb=DIV.css_class 'session-buttons'
     @dd=@dsb.descend DIV
-    get :index
+#    get :index
+     render :file, '
   end
 
 end
