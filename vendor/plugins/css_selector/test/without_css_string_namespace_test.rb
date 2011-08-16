@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class WithoutCssStringTest < ActiveSupport::TestCase
+class WithoutCssStringNamespaceTest < ActiveSupport::TestCase
 
   test 'before_app_includes_CssStringNamespace' do
     assert  defined?(CssStringNamespace), 'missing CssStringNamespace'

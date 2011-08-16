@@ -5,6 +5,6 @@ module CssStringNamespace
         ].each do |e|
       self.const_set e.upcase.to_sym, (CssString.new e.downcase)
     end
-
+ 
   end
 end

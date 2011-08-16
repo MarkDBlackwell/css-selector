@@ -1,6 +1,6 @@
 module CssStringNamespace
   class CssString < String
-    include PublicInstanceMethods
-    include PrivateInstanceMethods
+    include ::CssStringNamespace::CssString::PublicInstanceMethods
+    include ::CssStringNamespace::CssString::PrivateInstanceMethods
   end
 end
