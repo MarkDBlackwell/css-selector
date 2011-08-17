@@ -1,8 +1,7 @@
-require 'css_string_namespace'
+require 'css_string'
 
 module CssSelector
   module PublicInstanceMethods
-    include ::CssStringNamespace
     public
 
     def assert_descend a, b

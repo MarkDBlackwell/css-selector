@@ -1,4 +1,4 @@
-require 'css_string_namespace/css_string'
+require 'css_string'
 
 module CssStringConstants
 

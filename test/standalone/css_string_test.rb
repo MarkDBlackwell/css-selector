@@ -1,10 +1,9 @@
 require File.dirname(__FILE__) + '/../standalone_test_helper'
+require 'css_string'
 
-# class CssStringNamespaceTest < ActiveSupport::TestCase
-class CssStringNamespaceTest < Test::Unit::TestCase
-  include CssStringNamespace
+class CssStringTest < Test::Unit::TestCase
 
-  def test_after_app_includes_CssStringNamespace
+  def test_after_app_includes_CssString
     assert defined?(CssString), 'missing CssString'
   end
 

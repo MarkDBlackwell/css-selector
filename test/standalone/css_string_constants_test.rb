@@ -1,9 +1,8 @@
 require File.dirname(__FILE__) + '/../standalone_test_helper'
-require 'css_string_namespace'
+require 'css_string_constants'
 
-# class ConstantsCssStringNamespaceTest < ActiveSupport::TestCase
-class ConstantsCssStringNamespaceTest < Test::Unit::TestCase
-  include ::CssStringNamespace
+class CssStringConstantsTest < Test::Unit::TestCase
+  include ::CssStringConstants
 
   def test_constants
     %w[
