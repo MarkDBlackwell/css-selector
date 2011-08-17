@@ -22,7 +22,12 @@ module CssSelector
         assert_select s, 1, s+' count'
         assert_select s, value
       else
-        assert_select s, 1 unless s.blank?
+#        assert_select s, 1 unless s.blank?
+# TODO: pare down these blank states only to the useful.
+        is_blank = s.nil? || s.empty? ||
+            ((s.kind_of? String) && s.strip.empty?) ||
+            ((s.kind_of? Array)  && s.flatten.empty?)
+        assert_select s, 1 unless is_blank
         (! also_attribute_alone ? [s] : [s, CssString.new]).each do |e|
           assert_select e.attribute(a), 1
           assert_select e.attribute(a,'?'), value

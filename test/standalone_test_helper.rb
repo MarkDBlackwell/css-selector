@@ -14,6 +14,7 @@ $LOAD_PATH.unshift File.join *[plugin_root,'lib']
 require 'test/unit'
 require 'rubygems'
 gem 'mocha', '= 0.9.8'
+require 'mocha'
 
 gem 'activesupport', '= 3.0.9'
-#require 'activesupport'
+## require 'activesupport' # Couldn't find how. Include?
