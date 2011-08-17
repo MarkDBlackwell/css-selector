@@ -1,3 +1,5 @@
+require 'css_string_namespace'
+
 module CssSelector
   module PublicInstanceMethods
     include ::CssStringNamespace

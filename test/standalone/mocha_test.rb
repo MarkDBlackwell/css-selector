@@ -1,7 +1,4 @@
-#require 'test_helper'
-require 'rubygems'
-require 'test/unit'
-require 'mocha'
+require File.dirname(__FILE__) + '/../standalone_test_helper'
 
 class MochaTest < Test::Unit::TestCase
 

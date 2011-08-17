@@ -1,15 +1,11 @@
-require 'test_helper'
-# require 'rubygems'
-# require 'test/unit'
-require 'mocha' # Already in Gemfile.
+require File.dirname(__FILE__) + '/../standalone_test_helper'
 
-class CssSelectorTest < ActiveSupport::TestCase
-# class CssSelectorTest < Test::Unit::TestCase
+# class CssSelectorTest < ActiveSupport::TestCase
+class CssSelectorTest < Test::Unit::TestCase
   include CssSelector
 #  include CssStringNamespace
 
-  test 'assert_descend' do
-#  def test_assert_descend
+  def test_assert_descend
 #      assert_select b, 1
 #      assert_select a.descend(b), 1
 #     ActionDispatch::Assertions::SelectorAssertions.
