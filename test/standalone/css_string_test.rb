@@ -3,7 +3,7 @@ require 'css_string'
 
 class CssStringTest < Test::Unit::TestCase
 
-  def test_after_app_includes_CssString
+  def test_we_have_CssString
     assert defined?(CssString), 'missing CssString'
   end
 
