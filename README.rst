@@ -68,7 +68,7 @@ you can say:
   | assert_single [i, t], 'some-value', false
 
 Requirements
-===========
+============
 
 In test/test_helper.rb (or elsewhere), specify:
 
