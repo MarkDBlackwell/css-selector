@@ -13,15 +13,19 @@ Example
 
 For example, with this plugin, instead of:
 
-  | assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
+```ruby
+assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
+```
 
 you can say:
 
-  | s=DIV.css_class 'some-div'
-  | f=s.child FORM
-  | i=f.child(INPUT).css_class 'an-input'
-  | t=i.attribute 'text'
-  | assert_select t, 'some-value'
+```ruby
+s=DIV.css_class 'some-div'
+f=s.child FORM
+i=f.child(INPUT).css_class 'an-input'
+t=i.attribute 'text'
+assert_select t, 'some-value'
+```
 
 (From the plugin test file, 'test/standalone/example_test.rb'.)
 
@@ -29,50 +33,68 @@ Here's how to use the (couple of) additional assertion methods (with the above v
 
 With assert_descend, instead of:
 
-  | assert_select f, 1, "#{f} count"
-  | assert_select f.descend(i), 1, "#{f.descend i} count"
+```ruby
+assert_select f, 1, "#{f} count"
+assert_select f.descend(i), 1, "#{f.descend i} count"
+```
 
 achieving the same effect, you can more simply say:
 
-  | assert_descend f, i
+```ruby
+assert_descend f, i
+```
 
 With assert_single, instead of:
 
-  | assert_select t, 1, "#{t} count"
-  | assert_select t, 'some-value'
+```ruby
+assert_select t, 1, "#{t} count"
+assert_select t, 'some-value'
+```
 
 you can say:
 
-  | assert_single t, 'some-value'
+```ruby
+assert_single t, 'some-value'
+```
 
 If you have only one attribute, 't' on your webpage, instead of:
 
-  | assert_select i, 1, "#{i} count"
-  | assert_select "[#{t}]", 1, "#{t} count"
-  | assert_select "#{i}[#{t}]", 1, "#{i}, #{t} count"
-  | assert_select "[#{t}=?]", 'some-value'
-  | assert_select "#{i}[#{t}=?]", 'some-value'
+```ruby
+assert_select i, 1, "#{i} count"
+assert_select "[#{t}]", 1, "#{t} count"
+assert_select "#{i}[#{t}]", 1, "#{i}, #{t} count"
+assert_select "[#{t}=?]", 'some-value'
+assert_select "#{i}[#{t}=?]", 'some-value'
+```
 
 you can say:
 
-  | assert_single [i, t], 'some-value'
+```ruby
+assert_single [i, t], 'some-value'
+```
 
 Or if you have multiple attributes, 't' on your webpage, instead of:
 
-  | assert_select i, 1, "#{i} count"
-  | assert_select "#{i}[#{t}]", 1, "#{i}, #{t} count"
-  | assert_select "#{i}[#{t}=?]", 'some-value'
+```ruby
+assert_select i, 1, "#{i} count"
+assert_select "#{i}[#{t}]", 1, "#{i}, #{t} count"
+assert_select "#{i}[#{t}=?]", 'some-value'
+```
 
 you can say:
 
-  | assert_single [i, t], 'some-value', false
+```ruby
+assert_single [i, t], 'some-value', false
+```
 
 Requirements
 ============
 
 In test/test_helper.rb (or elsewhere), specify:
 
-  | include CssStringConstants
+```ruby
+include CssStringConstants
+```
 
 Certain constants (DIV, etc.) useful for testing a Rails app are not automatically brought in, in order to avoid polluting your main app's top-level namespace.
 
