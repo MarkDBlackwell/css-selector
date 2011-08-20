@@ -27,7 +27,7 @@ t=i.attribute 'text'
 assert_select t, 'some-value'
 ```
 
-(From the plugin test file, <test/standalone/example_test.rb>.)
+(From the plugin test file, [test/standalone/example_test.rb](test/standalone/example_test.rb).)
 
 Here's how to use the (couple of) additional assertion methods (with the above variables assumed):
 
@@ -103,6 +103,6 @@ CssString (or 'Css
 Selectors')](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm) 
 and/or blog post, [CSS selector objects and methods for testing in 
 Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) 
-and the plugin file, <test/notes.txt>.
+and the plugin file, [test/notes.txt](test/notes.txt).
 
-Copyright (c) 2011 Mark D. Blackwell. See <MIT-LICENSE> for details.
+Copyright (c) 2011 Mark D. Blackwell. See [MIT-LICENSE](MIT-LICENSE) for details.
