@@ -23,7 +23,7 @@ you can say:
 s=DIV.css_class 'some-div'
 f=s.child FORM
 i=f.child(INPUT).css_class 'an-input'
-t=i.attribute 'text'
+t=i.attribute TEXT
 assert_select t, 'some-value'
 ```
 
@@ -94,6 +94,7 @@ In your test/test_helper.rb (or elsewhere), specify:
 
 ```ruby
 include CssStringConstants
+include CssSelector # Why not automatic?
 ```
 
 Certain constants (DIV, etc.) useful for testing a Rails app are not automatically brought in, in order to avoid polluting your main app's top-level namespace.
