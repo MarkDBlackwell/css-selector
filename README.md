@@ -1,17 +1,15 @@
 CssSelector
 ===========
 
-NOT READY YET.
+This plugin aids Rails (application) testing (using assert_select). It does this by giving you:
 
-This plugin aids Rails application testing (with assert_select). It does this by:
-
-* Supplying an object system for CSS selectors (somewhat like Pathname does for filesystem paths), and
-* Adding a couple of assertion methods for them.
+* A CSS selector object system (somewhat like Pathname for filesystem paths), and
+* Additional assertion methods.
 
 Example
 =======
 
-For example, with this plugin, instead of:
+With this plugin, instead of:
 
 ```ruby
 assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
@@ -29,9 +27,12 @@ assert_select t, 'some-value'
 
 (From the plugin test file, [test/standalone/example_test.rb](test/standalone/example_test.rb).)
 
-Here's how to use the (couple of) additional assertion methods (with the above variables assumed):
+Here's how to use the plugin's assertion methods (with the above variables):
 
-With assert_descend, instead of:
+assert_descend
+--------------
+
+Instead of:
 
 ```ruby
 assert_select f, 1, "#{f} count"
@@ -44,7 +45,10 @@ achieving the same effect, you can more simply say:
 assert_descend f, i
 ```
 
-With assert_single, instead of:
+assert_single
+-------------
+
+Instead of:
 
 ```ruby
 assert_select t, 1, "#{t} count"
@@ -57,7 +61,7 @@ you can say:
 assert_single t, 'some-value'
 ```
 
-If you have only one attribute, 't' on your webpage, instead of:
+If you have only one attribute ('t') on your webpage, then instead of:
 
 ```ruby
 assert_select i, 1, "#{i} count"
@@ -73,7 +77,7 @@ you can say:
 assert_single [i, t], 'some-value'
 ```
 
-Or if you have multiple attributes, 't' on your webpage, instead of:
+Or if you have multiple attributes ('t') on your webpage, instead of:
 
 ```ruby
 assert_select i, 1, "#{i} count"
@@ -87,23 +91,34 @@ you can say:
 assert_single [i, t], 'some-value', false
 ```
 
+How To Install
+==============
+
+In your Rails application:
+
+rails install plugin git://github.com/MarkDBlackwell/css-selector.git
+
 Requirements
 ============
 
-In your test/test_helper.rb (or elsewhere), specify:
+Certain constants (DIV, etc.) useful for testing a Rails app are not brought in automatically, to avoid pollution of your app's namespaces (outside the Rails testing environment).
+
+Also, I haven't fully investigated how to include CssSelector (the module, automatically) in just that environment.
+
+So you (yourself) should specify, in your app's test/test_helper.rb (or elsewhere):
 
 ```ruby
 include CssStringConstants
-include CssSelector # Why not automatic?
+include CssSelector
 ```
 
-Certain constants (DIV, etc.) useful for testing a Rails app are not automatically brought in, in order to avoid polluting your main app's top-level namespace.
+More Information
+================
 
-For background information, see the presentation, [Rails testing with 
-CssString (or 'Css 
-Selectors')](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm) 
-and/or blog post, [CSS selector objects and methods for testing in 
-Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) 
-and the plugin file, [test/notes.txt](test/notes.txt).
+For more evangelizing, see [CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) and presentation, [Rails testing with CssString (or 'Css Selectors')](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
+
+For background information, see:
+* ActionDispatch::Assertions::SelectorAssertions: [APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html) or [RubyOnRails old](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html)
+* HTML::Selector: [APIdock](http://apidock.com/rails/HTML/Selector/) or [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html)
 
 Copyright (c) 2011 Mark D. Blackwell. See [MIT-LICENSE](MIT-LICENSE) for details.
