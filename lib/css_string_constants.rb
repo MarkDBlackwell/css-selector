@@ -1,5 +1,7 @@
 require 'css_string'
 
+# Constants for constructing compound Css Strings.
+
 module CssStringConstants
 
     %w[
