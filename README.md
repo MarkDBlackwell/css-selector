@@ -4,7 +4,7 @@ A Rails plugin to aid application testing (with assert_select). It does this by 
 * CSS selector objects (like Pathname's for filesystem paths), and
 * Additional assertion methods
 
-##Example
+##Example Usage
 With the plugin (see [example_test.rb](test/standalone/example_test.rb)), rather than
 
 ```ruby
@@ -98,7 +98,12 @@ Evangelizing:
 
 Background:
 
-[APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html), [RubyOnRails (old)](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html): ActionDispatch::Assertions::SelectorAssertions
-[APIdock](http://apidock.com/rails/HTML/Selector/), [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html): HTML::Selector
+ActionDispatch::Assertions::SelectorAssertions:
+
+[APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html), [RubyOnRails (old)](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html)
+
+HTML::Selector:
+
+[APIdock](http://apidock.com/rails/HTML/Selector/), [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html)
 
 Copyright (c) 2011 Mark D. Blackwell. See [MIT-LICENSE](MIT-LICENSE) for details.
