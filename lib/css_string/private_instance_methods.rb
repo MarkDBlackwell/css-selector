@@ -2,12 +2,13 @@ class CssString < String
   module PrivateInstanceMethods
     private
 
+# Helper for the CssString methods.
+
     def guard *a
-#      return true if a.blank?
-#      a = a.flatten
-#      a.blank? || ['']==a
       is_blank a
     end
+
+# Helper for the CssString methods.
 
     def is_blank a
 # TODO: pare down these blank states only to the useful.

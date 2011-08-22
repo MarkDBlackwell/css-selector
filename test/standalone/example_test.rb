@@ -11,7 +11,7 @@ class ExampleTest < Test::Unit::TestCase
     s=DIV.css_class 'some-div'
     f=s.child FORM
     i=f.child(INPUT).css_class 'an-input'
-    t=i.attribute 'text'
+    t=i.attribute TEXT
     assert_equal 'div.some-div > form > input.an-input[text]', t
   end
 

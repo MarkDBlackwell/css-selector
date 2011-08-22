@@ -5,7 +5,7 @@ require 'rdoc/task'
 desc 'Default: run unit tests.'
 task :default => :test
 
-desc 'Test the css_selector plugin.'
+desc 'Standalone-test the css_selector plugin.'
 Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.libs << 'test'

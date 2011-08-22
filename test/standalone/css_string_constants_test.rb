@@ -6,7 +6,9 @@ class CssStringConstantsTest < Test::Unit::TestCase
 
   def test_constants
     %w[
-        A BODY DIV FORM HEAD HTML IMG INPUT LABEL SCRIPT STYLE TABLE TITLE
+    A ACTION BODY CLASS COMMIT DIV
+    FORM HEAD HREF HTML IMG INPUT LABEL NAME NONE
+    SCRIPT SRC STYLE SUBMIT TABLE TARGET TEXT TITLE TYPE VALUE
         ].each do |e|
       c = Kernel.eval e # Method, 'const_get' did not work here.
       assert_equal c, e.downcase

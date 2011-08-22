@@ -1,66 +1,55 @@
-CssSelector
-===========
+#CssSelector
+A Rails plugin to aid application testing (with assert_select). It does this by giving you:
 
-Overview
---------
+* CSS selector objects (like Pathname's for filesystem paths), and
+* Additional assertion methods
 
-NOT READY YET.
-
-This plugin aids Rails application testing (with assert_select). It does this by:
-
-* Supplying an object system for CSS selectors (somewhat like Pathname for filesystem paths), and
-* Adding assertion methods for them.
-
-Example
--------
-
-For example, with this plugin, instead of:
+##Example Usage
+With the plugin (see [example_test.rb](test/standalone/example_test.rb)), rather than
 
 ```ruby
 assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
 ```
 
-you can say:
+you can say
 
 ```ruby
 s=DIV.css_class 'some-div'
 f=s.child FORM
 i=f.child(INPUT).css_class 'an-input'
-t=i.attribute 'text'
+t=i.attribute TEXT
 assert_select t, 'some-value'
 ```
 
-(From the plugin test file, [test/standalone/example_test.rb](test/standalone/example_test.rb).)
-
-Here's how to use the (couple of) additional assertion methods (with the above variables assumed):
-
-With assert_descend, instead of:
+###assert_descend
+Of course, the assertion methods can be used with the above variables -- for the effect of
 
 ```ruby
 assert_select f, 1, "#{f} count"
 assert_select f.descend(i), 1, "#{f.descend i} count"
 ```
 
-achieving the same effect, you can more simply say:
+you can say more simply
 
 ```ruby
 assert_descend f, i
 ```
 
-With assert_single, instead of:
+###assert_single
+Instead of
 
 ```ruby
 assert_select t, 1, "#{t} count"
 assert_select t, 'some-value'
 ```
 
-you can say:
+you can say
 
 ```ruby
 assert_single t, 'some-value'
 ```
 
-If you have only one attribute, 't' on your webpage, instead of:
+If you have one attribute ('t') on your webpage, instead of
 
 ```ruby
 assert_select i, 1, "#{i} count"
@@ -70,13 +59,13 @@ assert_select "[#{t}=?]", 'some-value'
 assert_select "#{i}[#{t}=?]", 'some-value'
 ```
 
-you can say:
+you can say
 
 ```ruby
 assert_single [i, t], 'some-value'
 ```
 
-Or if you have multiple attributes, 't' on your webpage, instead of:
+Or if you have multiple attributes ('t') on your webpage, instead of
 
 ```ruby
 assert_select i, 1, "#{i} count"
@@ -84,28 +73,30 @@ assert_select "#{i}[#{t}]", 1, "#{i}, #{t} count"
 assert_select "#{i}[#{t}=?]", 'some-value'
 ```
 
-you can say:
+you can say
 
 ```ruby
 assert_single [i, t], 'some-value', false
 ```
 
-Requirements
-------------
+##How To Install
+In your Rails application, 'rails install plugin git://github.com/MarkDBlackwell/css-selector.git'.
 
-In your test/test_helper.rb (or elsewhere), specify:
+##Requirements
+Certain constants (like DIV) useful in testing a Rails application are not brought in automatically. This avoids polluting your app namespace outside environment 'test'.
+
+I haven't yet (fully) discovered how to include module, CssSelector automatically in just that environment. Therefore, probably in (your app's) test/test_helper.rb, you should specify
 
 ```ruby
 include CssStringConstants
+include CssSelector
 ```
 
-Certain constants (DIV, etc.) useful for testing a Rails app are not automatically brought in, in order to avoid polluting your main app's top-level namespace.
+##More Information
+Evangelizing: [CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) or presentation, [Rails testing with CssString (Css Selectors)](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
 
-For background information, see the presentation, [Rails testing with 
-CssString (or 'Css 
-Selectors')](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm) 
-and/or blog post, [CSS selector objects and methods for testing in 
-Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) 
-and the plugin file, [test/notes.txt](test/notes.txt).
+ActionDispatch::Assertions::SelectorAssertions: [APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html), [RubyOnRails (old)](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html)
+
+HTML::Selector: [APIdock](http://apidock.com/rails/HTML/Selector/), [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html)
 
 Copyright (c) 2011 Mark D. Blackwell. See [MIT-LICENSE](MIT-LICENSE) for details.
