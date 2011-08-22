@@ -1,5 +1,5 @@
 module CssSelector
   module Constants
-    VERSION = '0.0.0'
+    Version = VERSION = '0.0.0'
   end
 end

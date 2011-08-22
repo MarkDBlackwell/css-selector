@@ -2,7 +2,6 @@ class CssString < String
   module PublicInstanceMethods
     public
 
-    def +    *a; return self if guard *a; CssString.new [self, a].to_s end
     def adjacent  *a; CssString.new a.flatten.unshift(self).join ' + ' end
     def child     *a; CssString.new a.flatten.unshift(self).join ' > ' end
     def css_class *a; CssString.new a.flatten.unshift(self).join  '.'  end
@@ -10,6 +9,11 @@ class CssString < String
     def descend   *a; CssString.new a.flatten.unshift(self).join  ' '  end
     def first     *a; self.child(*a) + ':first-child'                  end
     def last      *a; self.child(*a) +  ':last-child'                  end
+
+    def + *a
+      return self if guard *a
+      CssString.new [self, a].to_s
+    end
 
     def not *a
       return self if guard *a

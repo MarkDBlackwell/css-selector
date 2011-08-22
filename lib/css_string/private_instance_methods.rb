@@ -3,9 +3,6 @@ class CssString < String
     private
 
     def guard *a
-#      return true if a.blank?
-#      a = a.flatten
-#      a.blank? || ['']==a
       is_blank a
     end
 

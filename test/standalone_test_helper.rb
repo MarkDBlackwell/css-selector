@@ -1,10 +1,7 @@
-# Followed the version of http://guides.rubyonrails.org/plugins.html
-# as of April 4, 2010 (says its changelog).
+# Following the April 4, 2010 (says its changelog) version of http://guides.rubyonrails.org/plugins.html 
 
-# Following:
-# http://weblog.rubyonrails.org/2009/9/1/gem-packaging-best-practices
+# Following http://weblog.rubyonrails.org/2009/9/1/gem-packaging-best-practices
 
-## require 'pathname'
 ## print '__FILE__=';p __FILE__
 uplevels = 2
 plugin_root = File.expand_path '../'*uplevels, __FILE__
@@ -16,5 +13,5 @@ require 'rubygems'
 gem 'mocha', '= 0.9.8'
 require 'mocha'
 
-gem 'activesupport', '= 3.0.9'
-## require 'activesupport' # Couldn't find how. Include?
+gem 'activesupport', '= 3.0.9' # Do I use this?
+## require 'activesupport' # Couldn't find how; use an include statement?
