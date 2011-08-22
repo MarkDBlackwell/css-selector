@@ -92,18 +92,10 @@ include CssSelector
 ```
 
 ##More Information
-Evangelizing:
+Evangelizing: [CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) or presentation, [Rails testing with CssString (Css Selectors)](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
 
-[CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) or presentation, [Rails testing with CssString (Css Selectors)](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
+ActionDispatch::Assertions::SelectorAssertions: [APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html), [RubyOnRails (old)](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html)
 
-Background:
-
-ActionDispatch::Assertions::SelectorAssertions:
-
-[APIdock](http://apidock.com/rails/ActionDispatch/Assertions/SelectorAssertions/), [RubyOnRails](http://api.rubyonrails.org/classes/ActionDispatch/Assertions/SelectorAssertions.html), [RubyOnRails (old)](http://rails.rubyonrails.org/classes/ActionController/Assertions/SelectorAssertions.html)
-
-HTML::Selector:
-
-[APIdock](http://apidock.com/rails/HTML/Selector/), [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html)
+HTML::Selector: [APIdock](http://apidock.com/rails/HTML/Selector/), [RubyOnRails](http://api.rubyonrails.org/classes/HTML/Selector.html)
 
 Copyright (c) 2011 Mark D. Blackwell. See [MIT-LICENSE](MIT-LICENSE) for details.
