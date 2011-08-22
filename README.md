@@ -1,15 +1,18 @@
 CssSelector
 ===========
 
+Overview
+--------
+
 NOT READY YET.
 
 This plugin aids Rails application testing (with assert_select). It does this by:
 
-* Supplying an object system for CSS selectors (somewhat like Pathname does for filesystem paths), and
-* Adding a couple of assertion methods for them.
+* Supplying an object system for CSS selectors (somewhat like Pathname for filesystem paths), and
+* Adding assertion methods for them.
 
 Example
-=======
+-------
 
 For example, with this plugin, instead of:
 
@@ -88,7 +91,7 @@ assert_single [i, t], 'some-value', false
 ```
 
 Requirements
-============
+------------
 
 In your test/test_helper.rb (or elsewhere), specify:
 
