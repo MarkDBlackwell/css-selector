@@ -1,5 +1,5 @@
 #CssSelector
-A Rails plugin to aid application testing (with assert_select). It does this by giving you:
+A Rails plugin to aid in application testing (with assert_select). It does this by giving you:
 
 * CSS selector objects (like Pathname's for filesystem paths), and
 * Additional assertion methods
@@ -14,6 +14,13 @@ assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
 you can say
 
 ```ruby
+t=DIV.css_class('some-div').child(FORM,INPUT).css_class('an-input').attribute TEXT
+assert_select t, 'some-value'
+```
+
+Or, breaking it down
+
+```ruby
 s=DIV.css_class 'some-div'
 f=s.child FORM
 i=f.child(INPUT).css_class 'an-input'
@@ -22,14 +29,14 @@ assert_select t, 'some-value'
 ```
 
 ###assert_descend
-Of course, the assertion methods can be used with the above variables -- for the effect of
+Of course, the assertion methods can be used with the above variables. For the effect of
 
 ```ruby
 assert_select f, 1, "#{f} count"
 assert_select f.descend(i), 1, "#{f.descend i} count"
 ```
 
-you can say more simply
+you can say, more simply
 
 ```ruby
 assert_descend f, i
