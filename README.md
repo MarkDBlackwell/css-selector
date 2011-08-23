@@ -5,7 +5,7 @@ A Rails plugin to aid in application testing (with assert_select). It does this 
 * Additional assertion methods
 
 ##Example Usage
-With the plugin (see [example_test.rb](test/standalone/example_test.rb)), rather than
+With the plugin (see [example_test.rb](test/standalone/example_test.rb)) rather than
 
 ```ruby
 assert_select 'div.some-div > form > input.an-input[text]', 'some-value'
@@ -18,7 +18,7 @@ t=DIV.css_class('some-div').child(FORM,INPUT).css_class('an-input').attribute TE
 assert_select t, 'some-value'
 ```
 
-Or, breaking it down
+Or, breaking it down further
 
 ```ruby
 s=DIV.css_class 'some-div'
@@ -90,9 +90,9 @@ assert_single [i, t], 'some-value', false
 In your Rails application, 'rails install plugin git://github.com/MarkDBlackwell/css-selector.git'.
 
 ##Requirements
-Certain constants (like DIV) useful in testing a Rails application are not brought in automatically. This avoids polluting your app namespace outside environment 'test'.
+Certain constants (e.g., DIV) useful in testing a Rails application are not brought in automatically. This avoids polluting your app namespace outside environment 'test'.
 
-I haven't yet (fully) discovered how to include module, CssSelector automatically in just that environment. Therefore, probably in (your app's) test/test_helper.rb, you should specify
+I haven't yet (fully) discovered how to include module CssSelector automatically in just that environment. Therefore, probably in (your app's) test/test_helper.rb, you should specify
 
 ```ruby
 include CssStringConstants
@@ -102,7 +102,9 @@ include CssSelector
 ##Testing
 
 Tested with Rails 3.0.9 & Ruby 1.8.7.
-Please let me know if you find something wrong with it!
+Please let me know if you find anything wrong with it!
+
+An example testbed is at [css-selector-example](https://github.com/MarkDBlackwell/css-selector-example)
 
 ##More Information
 Evangelizing: [CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) or presentation, [Rails testing with CssString (Css Selectors)](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
