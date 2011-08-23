@@ -1,6 +1,6 @@
 require 'css_string'
 
-# Constants for constructing compound Css Strings.
+# Constants for constructing composite CssStrings.
 
 module CssStringConstants
 

@@ -13,7 +13,7 @@ module CssSelector
 
 # The second argument (as with Rails' assert_select) is a value either meaning: tag content, or a CSS attribute value.
 #
-# Asserts, under test, that there is a single match, having a given value, of optionally:
+# Asserts, under test, that there is a single match, having a given value, with optionally:
 #
 # (1) A single String object, or
 #
@@ -21,7 +21,7 @@ module CssSelector
 #
 # (3) A single String object, both with, and without, an entire list of name-value attribute pairs.
 #
-# Note: since class, CssString descends from String, they will work, too.
+# Since CssString descends from String, they will work, too.
 #
 # Option (2) pertains when 'false' is given as the last argument.
 #
@@ -31,14 +31,7 @@ module CssSelector
 #
 # An array of two objects, the first element being a (non-array) string.
 #
-# Then, the second element is passed to CssString#attribute, so it can be either:
-#
-# A (non-array) string, or
-#
-# An array (odd- or even-sized) of strings, which form CSS attribute name-value pairs consecutively.
-#
-# If the array size is an odd number, the last, named CSS attribute will be included without any CSS attribute value,
-# in forming the CSS Selector.
+# Then, the second element is passed to CssString#attribute.
 
     def assert_single selector, value, also_attribute_alone=true
       if (was_array=selector.kind_of? Array)
