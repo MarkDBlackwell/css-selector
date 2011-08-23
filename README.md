@@ -99,6 +99,11 @@ include CssStringConstants
 include CssSelector
 ```
 
+##Testing
+
+Tested with Rails 3.0.9 & Ruby 1.8.7.
+Please let me know if you find something wrong with it!
+
 ##More Information
 Evangelizing: [CSS selector objects and methods for testing in Ruby](http://markdblackwell.blogspot.com/2011/08/css-selector-objects-and-methods-for.html) or presentation, [Rails testing with CssString (Css Selectors)](http://zymbelstern.com/mark/presentation/Rails-testing-with-CssString/sbook2.htm).
 
