@@ -1,4 +1,4 @@
-#CssSelector
+#css-selector
 A Rails plugin to aid in application testing (with assert_select). It does this by giving you:
 
 * CSS selector objects (like Pathname's for filesystem paths), and
